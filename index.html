@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Lucoa's Portfolio</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,900" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="styling.css">
+</head>
+<body>
+
+<!-- <button class="slidenav slidenav-top"></button>
+<button class="slidenav slidenav-left"></button>
+<button class="slidenav slidenav-bottom"></button>
+<button class="slidenav slidenav-right"></button> -->
+
+<div class="slidenav slidenav-top">
+	<span class="text">Updates</span>
+</div>
+<div class="slidenav slidenav-left">
+	<span class="text" style="vertical-align: middle;">About</span>
+</div>
+<div class="slidenav slidenav-bottom">
+	<span class="text">Projects</span>
+</div>
+<div class="slidenav slidenav-right">
+	<span class="text" style="width: 100%; vertical-align: middle;">Contact</span>
+</div>
+
+<div id="PageContainer" class="page mainPage page--current">
+	<div class="pageInner">
+		<div class="pageInnerLeft">
+			<div class="textRad textRad1" style="perspective: 400px; opacity: 1;">
+				<span>Välkommen</span>
+			</div>
+			<div class="textRad textRad2" style="perspective: 400px; opacity: 1;">
+				<span>Till</span>
+			</div>
+			<div class="textRad textRad3" style="perspective: 400px; opacity: 1;">
+				<span>Min</span>
+			</div>
+			<div class="textRad textRad4" style="perspective: 400px; opacity: 1;">
+				<span>Portfolio</span>
+			</div>
+			<div class="textRad textRad5" style="perspective: 400px; opacity: 1;">
+				<span>Sida</span>
+			</div>
+		</div>
+		<div class="pageInnerCenter">
+			<div class="centerProfilePic">
+				<img src="sakuya.png">
+			</div>
+		</div>
+		<div class="pageInnerRight">
+			<div class="headline" style="opacity: 1;">
+				<div class="text" style="perspective: 400px">Thien Lai Phu</div>
+			</div>
+			<div class="text">
+				<span>Högskoleingenjör</span>
+				<br>
+				<span>Datatekniksstudent</span>
+				<br>
+				<span>Gamer&Animefantast</span>
+				<br>
+				<span class="textContainer" style="opacity: 1; color: rgb(255, 255, 255);">Programmerare</span>
+				<br>
+				<span id="rightSpan5">från</span>
+				<br>
+				<span id="rightSpan6">Sverige</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="page updatesPage">
+	<p>Work in Progress</p>
+</div>
+
+<div class="page contactPage">
+	<div class="contact_AdressContainer">
+		<div class="contact_Adress">
+			<p class="addressLine1" style="opacity: 1; transform: matrix(1,0,0,1,0,0);">Thien Lai Phu</p>
+			<p class="addressLine2" style="opacity: 1; transform: matrix(1,0,0,1,0,0);">Grönalundsgatan 13C, Limhamn</p>
+			<p class="addressLine3" style="opacity: 1; transform: matrix(1,0,0,1,0,0);">Sverige +46738346961</p>
+			<a class="addressEmailLine" style="opacity: 1; transform: matrix(1,0,0,1,0,0);" href="mailto:danterev@hotmail.com">
+				<div class="addressEmailBg" style="width: 100%; transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+				<span>d</span>
+				<span>a</span>
+				<span>n</span>
+				<span>t</span>
+				<span>e</span>
+				<span>r</span>
+				<span>e</span>
+				<span>v</span>
+				<span>@</span>
+				<span>h</span>
+				<span>o</span>
+				<span>t</span>
+				<span>m</span>
+				<span>a</span>
+				<span>i</span>
+				<span>l</span>
+				<span>.</span>
+				<span>c</span>
+				<span>o</span>
+				<span>m</span>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="page projectsPage">
+	<p>Work in Progress</p>
+</div>
+<div class="page aboutPage">
+	<p>Work in Progress</p>
+</div>
+
+<div id="background"></div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+	$(function() {
+		$('.slidenav.slidenav-right span').css("width", $(window).width());
+	});
+
+	$(window).on('resize', function(){
+		var win = $(this);
+		$('.slidenav.slidenav-right span').css("width", win.width());
+	});
+
+	$('.slidenav.slidenav-top').on('click', function() {
+		if(!$('.page.updatesPage').hasClass('page--current')){
+			$('.page.mainPage').removeClass('page--current');
+			$('.page.updatesPage').addClass('page--current');
+
+			$('.slidenav.slidenav-right').css("visibility", "hidden");
+			$('.slidenav.slidenav-left').css("visibility", "hidden");
+			$('.slidenav.slidenav-bottom').css("visibility", "hidden");
+		}else{
+			$('.page.updatesPage').removeClass('page--current');
+			$('.page.mainPage').addClass('page--current');
+
+			$('.slidenav.slidenav-right').css("visibility", "visible");
+			$('.slidenav.slidenav-left').css("visibility", "visible");
+			$('.slidenav.slidenav-bottom').css("visibility", "visible");
+		}
+	})
+
+	$('.slidenav.slidenav-right').on('click', function() {
+		if(!$('.page.contactPage').hasClass('page--current')){
+			$('.page.mainPage').removeClass('page--current');
+			$('.page.contactPage').addClass('page--current');
+
+			$('.slidenav.slidenav-top').css("visibility", "hidden");
+			$('.slidenav.slidenav-left').css("visibility", "hidden");
+			$('.slidenav.slidenav-bottom').css("visibility", "hidden");
+		}else{
+			$('.page.contactPage').removeClass('page--current');
+			$('.page.mainPage').addClass('page--current');
+
+			$('.slidenav.slidenav-top').css("visibility", "visible");
+			$('.slidenav.slidenav-left').css("visibility", "visible");
+			$('.slidenav.slidenav-bottom').css("visibility", "visible");
+		}
+	})
+
+	$('.slidenav.slidenav-bottom').on('click', function() {
+		if(!$('.page.projectsPage').hasClass('page--current')){
+			$('.page.mainPage').removeClass('page--current');
+			$('.page.projectsPage').addClass('page--current');
+
+			$('.slidenav.slidenav-top').css("visibility", "hidden");
+			$('.slidenav.slidenav-left').css("visibility", "hidden");
+			$('.slidenav.slidenav-right').css("visibility", "hidden");
+		}else{
+			$('.page.projectsPage').removeClass('page--current');
+			$('.page.mainPage').addClass('page--current');
+
+			$('.slidenav.slidenav-top').css("visibility", "visible");
+			$('.slidenav.slidenav-left').css("visibility", "visible");
+			$('.slidenav.slidenav-right').css("visibility", "visible");
+		}
+	})
+
+	$('.slidenav.slidenav-left').on('click', function() {
+		if(!$('.page.aboutPage').hasClass('page--current')){
+			$('.page.mainPage').removeClass('page--current');
+			$('.page.aboutPage').addClass('page--current');
+
+			$('.slidenav.slidenav-top').css("visibility", "hidden");
+			$('.slidenav.slidenav-right').css("visibility", "hidden");
+			$('.slidenav.slidenav-bottom').css("visibility", "hidden");
+		}else{
+			$('.page.aboutPage').removeClass('page--current');
+			$('.page.mainPage').addClass('page--current');
+
+			$('.slidenav.slidenav-top').css("visibility", "visible");
+			$('.slidenav.slidenav-right').css("visibility", "visible");
+			$('.slidenav.slidenav-bottom').css("visibility", "visible");
+		}
+	})
+</script>
+
+</body>
+</html>
